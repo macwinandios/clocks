@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{D93187B8-306A-4AE2-9EB1-A2B58022B03C}|Default">
+  <MonoDevelop.Ide.ItemProperties.Customized.Android FirstBuild="True" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.ItemProperties.Customized.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.81E2F640-C0C5-4DB9-90FB-E27D55C8693B" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Customized" expanded="True">
+            <Node name="Customized" expanded="True">
+              <Node name="PageModel" expanded="True">
+                <Node name="PayPageModel.cs" selected="True" />
+              </Node>
+              <Node name="View" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

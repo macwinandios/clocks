@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nNHvbGJWr2euLAUeFfsQ160rBPObZ1F/24j07QY/iQfHDyC99zGj4S3s7nUDL1r0kKbCcq6Rr2KTRF1+g8T1fg==",
+  "success": true,
+  "projectFilePath": "/Users/macwinandios/Projects/Customized/Customized.iOS/Customized.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/macwinandios/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/macwinandios/.nuget/packages/xamarin.essentials/1.7.3/xamarin.essentials.1.7.3.nupkg.sha512",
+    "/Users/macwinandios/.nuget/packages/xamarin.forms/5.0.0.2401/xamarin.forms.5.0.0.2401.nupkg.sha512"
+  ],
+  "logs": []
+}

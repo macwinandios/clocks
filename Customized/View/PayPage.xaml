@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Customized.PageModel"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    BackgroundColor="DarkRed"
+    x:Class="Customized.View.PayPage">
+
+    <ContentPage.BindingContext>
+        <local:PayPageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout Margin="0,20">
+
+
+            <!--TWO LABELS FOR DATE AND TIME-->
+            <Label Text="{Binding StringFormat= '{0:D}'}"    BindingContext="{x:Static sys:DateTime.Today}"
+                   FontSize="28"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="{Binding DateTime, StringFormat= '{0:T}'}"
+                   FontSize="28"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+
+
+
+            <!--THREE LABELS FOR THE TITLE OF THIS LIST-->
+            <StackLayout Margin="0,20,0,0" BackgroundColor="Red" Orientation="Horizontal">
+                <Label Text="WEEK OF" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="GROSS PAY" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="TOTAL HOURS"
+                       HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+
+            </StackLayout>
+
+            <ListView ItemsSource="{Binding WorkItems}" BackgroundColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Start}" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding End}" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding Total, StringFormat='{}{0:hh\\:mm\\:ss}'}" TextColor="LimeGreen" HorizontalOptions="CenterAndExpand" FontSize="16" FontAttributes="Bold"/>
+                                </StackLayout>
+                                    
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+       
+                               
+    </ContentPage.Content>
+</ContentPage>

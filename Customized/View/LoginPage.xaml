@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Customized.PageModel"
+    BackgroundColor="Black"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="Customized.View.LoginPage">
+    <ContentPage.BindingContext>
+        <local:LoginPageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+
+        <StackLayout Padding="50">
+                                                                       
+            <Image x:Name="Logo"
+                   WidthRequest="200"
+                   HeightRequest="200"/>
+
+            <Label Text="{Binding StringFormat= '{0:D}'}"    BindingContext="{x:Static sys:DateTime.Today}"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Entry Placeholder="Enter Username"
+                   Text="{Binding Username}"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="24"
+                   TextColor="Blue"
+                   BackgroundColor="Black"
+                   PlaceholderColor="LightGray"/>
+
+            <Entry Placeholder="Enter Password"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="24"
+                   TextColor="Blue"
+                   BackgroundColor="black"
+                   PlaceholderColor="LightGray"/>
+                   
+
+            <Button Text="LOGIN"
+                    Command="{Binding LoginCommand}"
+                    FontSize="30"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

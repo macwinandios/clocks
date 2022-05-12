@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Customized.PageModel"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    BackgroundColor="Black"
+    x:Class="Customized.View.ClockinPage">
+
+    <ContentPage.BindingContext>
+        <local:ClockinPageModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="0,40,0,0">
+
+            <!--TWO LABELS FOR DATE AND TIME-->
+            <Label Text="{Binding StringFormat= '{0:D}'}"    BindingContext="{x:Static sys:DateTime.Today}"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="{Binding DateTime, StringFormat= '{0:T}'}"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal">
+
+
+
+
+                <!--TWO BUTTONS FOR CLOCK IN AND CLOCK OUT-->
+            <Button Text="CLOCKIN"
+                    Command="{Binding ClockinCommand}"
+                    TextColor="Blue"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"/>
+
+            <Button Text="CLOCKOUT"
+                    Command="{Binding ClockoutCommand}"
+                    TextColor="Blue"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+
+
+            <!--LABEL THAT APPEARS ONLY WHEN USER CLOCKS IN-->
+            <StackLayout>
+                <Label  Text="YOU ARE CLOCKED IN"     TextColor="Red" IsVisible="{Binding IsClockedIn}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="28"/>
+                    
+            </StackLayout>
+
+
+
+            <!--THREE LABELS FOR THE TITLE OF THE LIST-->
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Clockin Time"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="Clockout Time"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="Total Time"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"/>
+
+
+            </StackLayout>
+            <!--DYNAMIC LIST, UPDATES EACH TIME USER CLOCKS IN AND OUT-->
+                  <ListView ItemsSource="{Binding WorkItems}" BackgroundColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Start}" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding End}" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding Total, StringFormat='{}{0:hh\\:mm\\:ss}'}" TextColor="LimeGreen" HorizontalOptions="CenterAndExpand" FontSize="16" FontAttributes="Bold"/>
+                                </StackLayout>
+                                    
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+            <!--LABEL WILL UPDATE EVERYTIME THE USER CLOCKS OUT-->
+            <StackLayout Margin="0,40" BackgroundColor="DarkRed">
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="TOTAL HOURS TODAY:"
+                                  TextColor="Black"
+                                  FontSize="25"
+                                  />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

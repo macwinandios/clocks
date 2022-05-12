@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            SelectedTabColor="Red"
+            BarBackgroundColor="DarkGray"
+            UnselectedTabColor="Blue"
+            xmlns:local="clr-namespace:Customized.View"
+             x:Class="Customized.View.Tabbed">
+    
+    <local:ClockinPage Title="Clock"/>
+    <local:PayPage Title="Pay"/>
+    <local:ProfilePage Title="Profile"/>
+    <local:CompanyPage Title="Company"/>
+</TabbedPage>
